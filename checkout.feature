@@ -10,8 +10,8 @@
             Quando o usuário clicar em "finalizar compra"
             Então deve exibir uma mensagem de alerta "Compra finalizada com sucesso!"
 
-            Cenário: email formato invalido
-            Dado que o usuário informe o email "a142.com.br"
+            Cenário: e-mail formato inválido
+            Dado que o usuário informe o email "#$@12"
             Quando o usuário clicar em "finalizar compra"
             Então deve exibir uma mensagem de alerta "Email em formato inválido, informe um formato válido(ex: ebacshop@ebacshop.com.br)!"
 
@@ -19,21 +19,3 @@
             Dado que o usuário queira finalizar a compra sem informar nenhum dado obrigatório
             Quando o usuário clicar em "finalizar compra"
             Então deve exibir uma mensagem de alerta "Todos os campos obrigatórios devem ser informados!"
-
-            Esquema do Cenário: Cenário: múltiplos cenários de preenchimento
-            Dado que o usuário não informe o campo <campoObrigatorio>
-            Quando o usuário clicar em "finalizar compra"
-            Então deve exibir uma mensagem de alerta "O campo obrigatório"+ <campoObrigatorio> +"deve ser informado!"
-
-            Exemplos
-            | campoObrigatorio     |
-            | "Nome"               |
-            | "Sobrenome"          |
-            | "País"               |
-            | "Endereço"           |
-            | "Cidade"             |
-            | "CEP"                |
-            | "Telefone"           |
-            | "Endereço de e-mail" |
-
-

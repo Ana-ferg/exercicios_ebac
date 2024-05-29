@@ -13,24 +13,14 @@
             E a senha "abc@123"
             Então deve ser direcionado para a tela de checkout.
 
-            Cenário: Usuário inexistente
-            Quando eu digitar o usuário "jwwwwwww@outlook.com.br"
-            E a senha "abc@123"
-            Então deve exibir uma mensagem de alerta "Usuário inexistente"
-
-            Cenário: Usuário com senha inválida
-            Quando eu digitar o usuário "ana@gmail.com.br"
-            E a senha "dfg@123"
-            Então deve exibir uma mensagem de alerta "Usuário ou senha inválidos"
-
-            Esquema do Cenário: Cenário: Autenticar múltiplos usuários
+            Esquema do Cenário: Cenário: Múltiplas Autenticações plataforma
             Quando eu digitar o <usuario>
             E a <senha>
-            Então deve ser direcionado para a tela de checkout.
+            Então Deve exibir uma mensagem de alerta <mensagem>.
 
             Exemplos
-            | usuario               | senha       |
-            | "joao@ebac.com.br"    | "senha@123" |
-            | "maria@ebac.com.br"   | "abc@123"   |
-            | "pedro@ebac.com.br"   | "dfg@123"   |
-            | "gabriel@ebac.com.br" | "hij@123"   |
+            | usuario            | senha     | mensagem                               |
+            | "!@#$%¨&*_+"       | "  "      | "Usuário inexistente"                  |
+            | ""                 | ""        | "Usuário e senha devem ser informados" |
+            | "ana@gmail.combr"  | "abc@123" | "Usuário inexistente"                  |
+            | "ana@gmail.com.br" | " #$%@!@" | "Usuário ou senha inválidos"           |
